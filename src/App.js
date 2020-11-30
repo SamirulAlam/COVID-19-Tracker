@@ -93,14 +93,13 @@ function App() {
                 <InfoBox active={casesType==="deaths"} onClick={e=>setCasesType("deaths")} title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)}/>
           </div>
           <Map casesType={casesType} countries={mapCountries} center={mapCenter} zoom={mapZoom}/>
-          console.log(casesTypeColors[casesType])
       </div>
       <Card className="app__right">
         <CardContent>
           <h3>Live cases by country</h3>
           <Table countries={tableData} />
-              <h3>Worldwide new {casesType}</h3>
-          <LineGraph casesType={casesType} />
+              <h3 className="app__graphTitle">Worldwide new {casesType}</h3>
+          <LineGraph className="app__graph" casesType={casesType} />
         </CardContent>
       </Card>
     </div>
